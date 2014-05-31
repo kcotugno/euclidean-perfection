@@ -1,20 +1,26 @@
-# Copyright (c) 2014 kcotugno
+# Copyright (C) 2014 kcotugno
 # Distributed under the MIT software license, see the accompanying
 # LICENSE file or http://www.opensource.org/licenses/MIT
 #
-# Auther: kcotugno
+# Author: kcotugno
 # Date 5/30/14
 
 import math
 
 
+# This function check if a number is prime first by testing for the #2, then if 
+# it less than 2 or divisible by 2. If non of these pre-checks return, it runs 
+# through a loop which goes from 3 to the sqrt of the number only testing it 
+# against odd numbers.
 def isprime(num):
-    if num < 2:
+    if num == 2:
+        return True
+        
+    if num < 2 or num % 2 == 0:
         return False
         
-    for i in range(2, int(math.sqrt(num)) + 1):
-        
-        if num % i == 0:
+    for i in range(3, int(math.sqrt(num)) + 1, 2):
+         if num % i == 0:
             return False
         
     return True
@@ -47,7 +53,7 @@ def perfection(calc):
         
         
 def main():
-    print("Eucldean Perfection")
+    print("Euclidean Perfection")
     print("Copyright (C) 2014 kcotugno")
     print("Distributed under the MIT software license, see the accompanying")
     print("LICENSE file or http://www.opensource.org/licenses/MIT\n")
